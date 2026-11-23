@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+*.log
+*.zip
+*.onnx
+*.exe
+config.local.json
+.env
+.env.*
+/runtime/data/
+/data/
+/user/
+*.test
+coverage.out

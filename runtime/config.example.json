@@ -1,0 +1,16 @@
+{
+  "listen": "127.0.0.1:8191",
+  "data_dir": "data",
+  "auth_token": "",
+  "max_active_runs": 4,
+  "max_llm_requests": 4,
+  "max_tool_workers": 2,
+  "max_queued_runs": 256,
+  "max_retained_runs": 128,
+  "max_body_bytes": 134217728,
+  "max_response_bytes": 134217728,
+  "cache_bytes": 16777216,
+  "providers": {},
+  "assets": {},
+  "tool_scopes": {}
+}

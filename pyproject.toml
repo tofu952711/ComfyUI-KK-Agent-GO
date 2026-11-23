@@ -1,0 +1,13 @@
+[project]
+name = "comfyui-kkagent-go"
+version = "0.1.4"
+description = "KK video reverse agent with independent ComfyUI nodes and a lightweight Go runtime"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = ["sherpa-onnx"]
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "KK Agent GO"
+Icon = ""
