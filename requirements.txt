@@ -1,3 +1,3 @@
-# ComfyUI supplies numpy, Pillow, av and aiohttp.
-# CPU speech tools reuse the existing sherpa-onnx runtime.
-sherpa-onnx
+# Offline wheels are included in vendor/wheels.
+sherpa-onnx==2.0.1
+sherpa-onnx-core==2.0.1

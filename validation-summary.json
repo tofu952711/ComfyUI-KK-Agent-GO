@@ -1,0 +1,39 @@
+{
+  "plugin_version": "0.1.5",
+  "runtime_version": "0.1.4",
+  "platform": "Windows x64",
+  "b_reference_tests_passed": 3,
+  "ab_checks": {
+    "duration_boundaries_mutually_exclusive": true,
+    "only_selected_chain_rule_fields_requested": true,
+    "concurrent_A_B_model_requests_overlap": true,
+    "no_cross_chain_user_or_tool_context": true,
+    "A_passthrough_and_B_split_video_outputs": true,
+    "A_ignores_B_rules_and_uses_shared_reviewer": true,
+    "B_ignores_A_rules": true,
+    "B_children_and_reviewer_completed": true,
+    "VideoJob_double_consumption_idempotent": true,
+    "A_close_does_not_stop_B_service": true,
+    "monitoring_run_ids_separate": true
+  },
+  "go_mock_smoke": {
+    "paid_requests": 0,
+    "remote_model_requests": 0,
+    "go_service_started": true,
+    "model_tool_continuation": true,
+    "literal_prompts_preserved": true,
+    "high_reasoning_preserved": true,
+    "tool_frame_result_received": true,
+    "tool_image_behavior": "existing dsh-video text attachment; image pixels are not appended",
+    "onnx_models_loaded": true,
+    "silence_decode_text": "没。",
+    "success": true
+  },
+  "offline_install_python312": true,
+  "wheel_resolution": [
+    "3.10",
+    "3.11",
+    "3.12",
+    "3.13"
+  ]
+}

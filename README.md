@@ -7,7 +7,7 @@
 ## 安装
 
 1. 从 [Releases](https://github.com/tofu952711/ComfyUI-KK-Agent-GO/releases) 下载 Windows x64 完整包并解压，将整个 `ComfyUI-KKAgent-Go` 文件夹复制到你的 `ComfyUI/custom_nodes/`。GitHub 的 Source code ZIP 只含源码，不包含 Go 可执行文件、FFmpeg 和 ONNX 模型，请使用完整包安装。
-2. 继续使用原来的 ComfyUI Python 环境。若该环境尚无 `sherpa-onnx`，用该环境的 Python 执行 `pip install -r requirements.txt`。
+2. 用启动 ComfyUI 的同一个 Python 执行 `python install.py`（请使用该 Python 的完整路径）。脚本校验完整包，并从包内 `vendor/wheels/` 离线安装语音依赖，不联网下载。已包含 Windows x64、CPython 3.10—3.13 对应 wheel 及其传递依赖；实际运行验证在 Python 3.12 完成。
 3. 重启 ComfyUI，刷新网页，在 `KK Agent GO` 分类中找到本插件提供的节点；节点名称在原版后增加 GO 后缀。
 
 原插件可同时保留。新插件注册 `KKGO_*` 节点、独立路由和配置目录，不替换旧节点，不自动转换你的旧工作流。
@@ -81,3 +81,11 @@ Windows PowerShell：
 FFmpeg 可执行文件和 ONNX 模型不提交到 Git；Windows 完整包保留相关资源及许可证。开发时可将完整包中的 `vendor/ffmpeg/` 与 `models/` 资源放回对应目录。首次运行生成的本地配置、服务 token、会话历史和素材数据不包含在仓库及发布包中。
 
 本次发布同步本机插件的任务停止、预处理进程隔离和取消状态显示修复。发布不附带任何用户工作流或文本框填写内容。
+
+## 0.1.5 更新
+
+以本地 Windows ComfyUI 当前安装的 Go 版插件为发布来源。A 链路及 B 链路每段输出给下游的参考视频均不超过30秒；反推、抽帧和语音证据仍覆盖原片或该段完整分析区间，不移动分段边界，也不把裁短的尾部移入下一段。
+
+完整包包含 Go 运行程序、FFmpeg/FFprobe、SenseVoice 与说话人分析 ONNX 模型、分词表、离线依赖及原许可证。现有 ComfyUI 的 torch、numpy、Pillow、av、aiohttp、psutil 沿用平台环境，不替换其 CUDA/PyTorch。无需另装 Go 编译器、FFmpeg 或下载语音模型；实际模型接口仍需用户凭据与网络。
+
+插件版本为0.1.5；本地 Go 可执行文件未变化，运行时健康接口仍报告0.1.4。完整包 SHA-256、文件清单及验证范围随发布提供。
